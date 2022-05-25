@@ -24,7 +24,7 @@ $chngpwd1->execute();
 $msg="Your Password succesfully changed";
 }
 else {
-$error="Email id or Mobile no is invalid";	
+$error="Email id or Mobile no is invalid";
 }
 }
 
@@ -98,17 +98,17 @@ return true;
 	<div class="container">
 		<h3 class="wow fadeInDown animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">Recover Password</h3>
 		<form name="chngpwd" method="post" onSubmit="return valid();">
-		 <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+		 <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 	<p style="width: 350px;">
-		
+
 			<b>Email id</b>  <input type="email" name="email" class="form-control" id="email" placeholder="Reg Email id" required="">
-	</p> 
+	</p>
 
 	<p style="width: 350px;">
-		
+
 			<b>Mobile No</b>  <input type="text" name="mobile" class="form-control" id="mobile" placeholder="Reg Mobile no" required="">
-	</p> 
+	</p>
 
 <p style="width: 350px;">
 <b>New  Password</b>
@@ -125,18 +125,18 @@ return true;
 			</p>
 			</form>
 
-		
+
 	</div>
 </div>
 <!--- /privacy ---->
 <!--- footer-top ---->
 <!--- /footer-top ---->
-<?php include('includes/footer.php');?>
+
 <!-- signup -->
-<?php include('includes/signup.php');?>			
+<?php include('includes/signup.php');?>
 <!-- //signu -->
 <!-- signin -->
-<?php include('includes/signin.php');?>			
+<?php include('includes/signin.php');?>
 <!-- //signin -->
 <!-- write us -->
 <?php include('includes/write-us.php');?>

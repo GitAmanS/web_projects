@@ -47,7 +47,7 @@ include('includes/config.php');
 			<div class="rup-rgt">
 				<h3>UP TO USD. 50 OFF</h3>
 				<h4><a href="offers.html">TRAVEL SMART</a></h4>
-				
+
 			</div>
 				<div class="clearfix"></div>
 		</div>
@@ -58,7 +58,7 @@ include('includes/config.php');
 			<div class="rup-rgt">
 				<h3>UP TO 70% OFF</h3>
 				<h4><a href="offers.html">ON HOTELS ACROSS WORLD</a></h4>
-				
+
 			</div>
 				<div class="clearfix"></div>
 		</div>
@@ -69,11 +69,11 @@ include('includes/config.php');
 			<div class="rup-rgt">
 				<h3>FLAT USD. 50 OFF</h3>
 				<h4><a href="offers.html">US APP OFFER</a></h4>
-			
+
 			</div>
 				<div class="clearfix"></div>
 		</div>
-	
+
 	</div>
 </div>
 <!--- /rupes ---->
@@ -84,14 +84,14 @@ include('includes/config.php');
 <!---holiday---->
 <div class="container">
 	<div class="holiday">
-	
 
 
 
-	
+
+
 	<h3>Package List</h3>
 
-					
+
 <?php $sql = "SELECT * from tbltourpackages order by rand() limit 4";
 $query = $dbh->prepare($sql);
 $query->execute();
@@ -119,8 +119,8 @@ foreach($results as $result)
 			</div>
 
 <?php }} ?>
-			
-		
+
+
 <div><a href="package-list.php" class="view">View More Packages</a></div>
 </div>
 			<div class="clearfix"></div>
@@ -165,15 +165,15 @@ foreach($results as $result)
 	</div>
 </div>
 
-<?php include('includes/footer.php');?>
+
 <!-- signup -->
-<?php include('includes/signup.php');?>			
+<?php include('includes/signup.php');?>
 <!-- //signu -->
 <!-- signin -->
-<?php include('includes/signin.php');?>			
+<?php include('includes/signin.php');?>
 <!-- //signin -->
 <!-- write us -->
-<?php include('includes/write-us.php');?>			
+<?php include('includes/write-us.php');?>
 <!-- //write us -->
 </body>
 </html>

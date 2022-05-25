@@ -3,7 +3,7 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['login'])==0)
-	{	
+	{
 header('location:index.php');
 }
 else{
@@ -81,10 +81,10 @@ $msg="Profile Updated Successfully";
 	<div class="container">
 		<h3 class="wow fadeInDown animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">Change Password</h3>
 		<form name="chngpwd" method="post">
-		 <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+		 <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 
-<?php 
+<?php
 $useremail=$_SESSION['login'];
 $sql = "SELECT * from tblusers where EmailId=:useremail";
 $query = $dbh -> prepare($sql);
@@ -98,9 +98,9 @@ foreach($results as $result)
 {	?>
 
 	<p style="width: 350px;">
-		
+
 			<b>Name</b>  <input type="text" name="name" value="<?php echo htmlentities($result->FullName);?>" class="form-control" id="name" required="">
-	</p> 
+	</p>
 
 <p style="width: 350px;">
 <b>Mobile Number</b>
@@ -116,7 +116,7 @@ foreach($results as $result)
 <?php echo htmlentities($result->UpdationDate);?>
 </p>
 
-<p style="width: 350px;">	
+<p style="width: 350px;">
 <b>Reg Date :</b>
 <?php echo htmlentities($result->RegDate);?>
 			</p>
@@ -127,18 +127,18 @@ foreach($results as $result)
 			</p>
 			</form>
 
-		
+
 	</div>
 </div>
 <!--- /privacy ---->
 <!--- footer-top ---->
 <!--- /footer-top ---->
-<?php include('includes/footer.php');?>
+
 <!-- signup -->
-<?php include('includes/signup.php');?>			
+<?php include('includes/signup.php');?>
 <!-- //signu -->
 <!-- signin -->
-<?php include('includes/signin.php');?>			
+<?php include('includes/signin.php');?>
 <!-- //signin -->
 <!-- write us -->
 <?php include('includes/write-us.php');?>

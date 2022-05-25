@@ -3,7 +3,7 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['login'])==0)
-	{	
+	{
 header('location:index.php');
 }
 else{
@@ -66,21 +66,21 @@ else{
 	<div class="container">
 		<h3 class="wow fadeInDown animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">Issue Tickets</h3>
 		<form name="chngpwd" method="post" onSubmit="return valid();">
-		 <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+		 <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 	<p>
 	<table border="1" width="100%">
 <tr align="center">
 <th>#</th>
 <th>Ticket Id</th>
-<th>Issue</th>	
+<th>Issue</th>
 <th>Description</th>
 <th>Admin Remark</th>
 <th>Reg Date</th>
 <th>Remark date</th>
 
 </tr>
-<?php 
+<?php
 
 $uemail=$_SESSION['login'];;
 $sql = "SELECT * from tblissues where UserEmail=:uemail";
@@ -104,22 +104,22 @@ foreach($results as $result)
 </tr>
 <?php $cnt=$cnt+1; }} ?>
 	</table>
-		
+
 			</p>
 			</form>
 
-		
+
 	</div>
 </div>
 <!--- /privacy ---->
 <!--- footer-top ---->
 <!--- /footer-top ---->
-<?php include('includes/footer.php');?>
+
 <!-- signup -->
-<?php include('includes/signup.php');?>			
+<?php include('includes/signup.php');?>
 <!-- //signu -->
 <!-- signin -->
-<?php include('includes/signin.php');?>			
+<?php include('includes/signin.php');?>
 <!-- //signin -->
 <!-- write us -->
 <?php include('includes/write-us.php');?>

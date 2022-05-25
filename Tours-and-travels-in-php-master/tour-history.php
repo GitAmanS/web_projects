@@ -3,7 +3,7 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['login'])==0)
-	{	
+	{
 header('location:index.php');
 }
 else{
@@ -112,14 +112,14 @@ $error="You can't cancel booking before 24 hours";
 	<div class="container">
 		<h3 class="wow fadeInDown animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">My Tour History</h3>
 		<form name="chngpwd" method="post" onSubmit="return valid();">
-		 <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+		 <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 	<p>
 	<table border="1" width="100%">
 <tr align="center">
 <th>#</th>
 <th>Booking Id</th>
-<th>Package Name</th>	
+<th>Package Name</th>
 <th>From</th>
 <th>To</th>
 <th>Comment</th>
@@ -127,7 +127,7 @@ $error="You can't cancel booking before 24 hours";
 <th>Booking Date</th>
 <th>Action</th>
 </tr>
-<?php 
+<?php
 
 $uemail=$_SESSION['login'];;
 $sql = "SELECT tblbooking.BookingId as bookid,tblbooking.PackageId as pkgid,tbltourpackages.PackageName as packagename,tblbooking.FromDate as fromdate,tblbooking.ToDate as todate,tblbooking.Comment as comment,tblbooking.status as status,tblbooking.RegDate as regdate,tblbooking.CancelledBy as cancelby,tblbooking.UpdationDate as upddate from tblbooking join tbltourpackages on tbltourpackages.PackageId=tblbooking.PackageId where UserEmail=:uemail";
@@ -158,7 +158,7 @@ echo "Confirmed";
 if($result->status==2 and  $result->cancelby=='u')
 {
 echo "Canceled by you at " .$result->upddate;
-} 
+}
 if($result->status==2 and $result->cancelby=='a')
 {
 echo "Canceled by admin at " .$result->upddate;
@@ -175,11 +175,11 @@ echo "Canceled by admin at " .$result->upddate;
 </tr>
 <?php $cnt=$cnt+1; }} ?>
 	</table>
-		
+
 			</p>
 			</form>
 
-		
+
 	</div>
 </div>
 <!--- /privacy ---->
@@ -187,10 +187,10 @@ echo "Canceled by admin at " .$result->upddate;
 <!--- /footer-top ---->
 <?php include('includes/footer.php');?>
 <!-- signup -->
-<?php include('includes/signup.php');?>			
+<?php include('includes/signup.php');?>
 <!-- //signu -->
 <!-- signin -->
-<?php include('includes/signin.php');?>			
+<?php include('includes/signin.php');?>
 <!-- //signin -->
 <!-- write us -->
 <?php include('includes/write-us.php');?>

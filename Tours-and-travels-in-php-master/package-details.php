@@ -24,7 +24,7 @@ if($lastInsertId)
 {
 $msg="Booked Successfully";
 }
-else 
+else
 {
 $error="Something went wrong. Please try again";
 }
@@ -77,7 +77,7 @@ $error="Something went wrong. Please try again";
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
-		</style>				
+		</style>
 </head>
 <body>
 <!-- top-header -->
@@ -90,10 +90,10 @@ $error="Something went wrong. Please try again";
 <!--- /banner ---->
 <!--- selectroom ---->
 <div class="selectroom">
-	<div class="container">	
-		  <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+	<div class="container">
+		  <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
-<?php 
+<?php
 $pid=intval($_GET['pkgid']);
 $sql = "SELECT * from tbltourpackages where PackageId=:pid";
 $query = $dbh->prepare($sql);
@@ -134,14 +134,14 @@ foreach($results as $result)
 				</div>
 			</div>
 		<h3>Package Details</h3>
-				<p style="padding-top: 1%"><?php echo htmlentities($result->PackageDetails);?> </p>	
+				<p style="padding-top: 1%"><?php echo htmlentities($result->PackageDetails);?> </p>
 				<div class="clearfix"></div>
 		</div>
 		<div class="selectroom_top">
 			<h2>Travels</h2>
 			<div class="selectroom-info animated wow fadeInUp animated" data-wow-duration="1200ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp; margin-top: -70px">
 				<ul>
-				
+
 					<li class="spe">
 						<label class="inputLabel">Comment</label>
 						<input class="special" type="text" name="comment" required="">
@@ -158,7 +158,7 @@ foreach($results as $result)
 					<div class="clearfix"></div>
 				</ul>
 			</div>
-			
+
 		</div>
 		</form>
 <?php }} ?>
@@ -168,12 +168,12 @@ foreach($results as $result)
 </div>
 <!--- /selectroom ---->
 <<!--- /footer-top ---->
-<?php include('includes/footer.php');?>
+
 <!-- signup -->
-<?php include('includes/signup.php');?>			
+<?php include('includes/signup.php');?>
 <!-- //signu -->
 <!-- signin -->
-<?php include('includes/signin.php');?>			
+<?php include('includes/signin.php');?>
 <!-- //signin -->
 <!-- write us -->
 <?php include('includes/write-us.php');?>
